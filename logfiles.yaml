@@ -1,0 +1,17 @@
+log_files:
+  - log_group_name: "syslog"
+    prefix_log_group: true
+    file_path: "/var/log/syslog"
+    log_stream_name: "{instance_id}"
+  - log_group_name: "user_data"
+    prefix_log_group: true
+    file_path: "/var/log/user-data.log"
+    log_stream_name: "{instance_id}/user_data"
+  - log_group_name: "runner"
+    prefix_log_group: true
+    file_path: "/opt/actions-runner/_diag/Runner_**.log"
+    log_stream_name: "{instance_id}/runner"
+  - log_group_name: "worker"
+    prefix_log_group: true
+    file_path: "/opt/actions-runner/_diag/Worker_**.log"
+    log_stream_name: "{instance_id}/worker"
