@@ -36,6 +36,7 @@ module "github_runner" {
   multi_runner_config = var.multi_runner_config
   role_path           = var.role_path
   logging_retention_in_days = var.logging_retention_in_days
+  log_level  = var.log_level
   
   # Lambda settings
   # Only send subnets in the lambda_subnet_names variable if the lambda functions will be attached to a VPC
