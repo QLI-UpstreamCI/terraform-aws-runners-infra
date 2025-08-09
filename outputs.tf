@@ -51,6 +51,7 @@ output "instance_types" {
       "r7a.xlarge",
     ]
     "2xlarge" = [
+      "c6g.2xlarge",
       "m5.2xlarge",
       "m5a.2xlarge",
       "m6i.2xlarge",
@@ -91,6 +92,9 @@ output "instance_types" {
       "c5.9xlarge",
       "m5.8xlarge",
     ]
+    "2xlarge-arm" = [
+      "c7g.2xlarge",
+    ]
     "4xlarge-arm" = [
       "c7g.4xlarge",
     ]
@@ -98,13 +102,21 @@ output "instance_types" {
       "c5a.4xlarge",      
     ]
     #Only include the instances those have instance store as SSD attached to the Instance.
-    "2xlarge-arm-dev" = [
+    "2xlarge-arm-ssd" = [
       "c6gd.2xlarge",      
     ]
     #Only include the instances those have instance store as SSD attached to the Instance.    
-    "4xlarge-amd-dev" = [
+    "4xlarge-amd-ssd" = [
       "c5ad.4xlarge",      
     ]    
+    #Only include the instances those have instance store as SSD attached to the Instance.
+    "16xlarge-arm-ros" = [
+      "c6gd.16xlarge",
+    ]
+    #Only include the instances those have instance store as SSD attached to the Instance.
+    "16xlarge-amd-ros" = [
+      "c5ad.16xlarge",
+    ]
   }
 }
 
