@@ -102,12 +102,22 @@ output "instance_types" {
       "c5a.4xlarge",      
     ]
     #Only include the instances those have instance store as SSD attached to the Instance.
-    "2xlarge-arm-ssd" = [
-      "c6gd.2xlarge",      
-    ]
+    #Foundries
+    "4xlarge-arm-ssd" = [
+      "c6gd.4xlarge", 
+    ] 
     #Only include the instances those have instance store as SSD attached to the Instance.    
-    "4xlarge-amd-ssd" = [
-      "c5ad.4xlarge",      
+    "8xlarge-amd-ssd" = [
+      "c5ad.8xlarge",  
+    ]    
+    #Only include the instances those have instance store as SSD attached to the Instance.      
+    #ROS  
+    "8xlarge-arm-ros" = [
+      "c6gd.8xlarge",
+    ]
+    #Only include the instances those have instance store as SSD attached to the Instance.
+    "8xlarge-amd-ros" = [
+      "c5ad.8xlarge",
     ]    
     #Only include the instances those have instance store as SSD attached to the Instance.
     "16xlarge-arm-ros" = [
