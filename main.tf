@@ -42,18 +42,18 @@ module "github_runner" {
   # Only send subnets in the lambda_subnet_names variable if the lambda functions will be attached to a VPC
   lambda_subnet_ids         = (length(var.lambda_subnet_names) != 0) ? data.aws_subnets.lambda_subnets.ids : []
   lambda_security_group_ids = (length(var.lambda_subnet_names) != 0) ? [aws_security_group.lambda_sg[0].id] : []
-  lambda_s3_bucket          = module.download_lambda.gha_lambdas_bucket.id
+  # lambda_s3_bucket          = module.download_lambda.gha_lambdas_bucket.id
   webhook_lambda_s3_key     = local.lambdas["webhook"].filename
   syncer_lambda_s3_key      = local.lambdas["runner-binaries-syncer"].filename
   runners_lambda_s3_key     = local.lambdas["runners"].filename
 
   tags           = var.tags
   tracing_config = var.tracing_config
-  depends_on     = [module.download_lambda]
+  # depends_on     = [module.download_lambda]
 }
-module "download_lambda" {
-  source             = "../download-lambda"
-  lambdas            = local.lambdas
-  tags               = var.tags
-  lambda_bucket_name = "${var.resource_name_prefix}-lambda-code-bucket"
-}
+# module "download_lambda" {
+#   source             = "../download-lambda"
+#   lambdas            = local.lambdas
+#   tags               = var.tags
+#   lambda_bucket_name = "${var.resource_name_prefix}-lambda-code-bucket"
+# }
